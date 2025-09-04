@@ -1,0 +1,1 @@
+A small project that converts natural-language prompts into a structured XML format that chatbots can consume. Includes a Python converter

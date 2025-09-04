@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PromptToXML — Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+    }
+    textarea {
+      width: 100%;
+      max-width: 600px;
+      font-family: monospace;
+      padding: 0.5rem;
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 1rem;
+      border-radius: 6px;
+      max-width: 600px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+  </style>
+</head>
+<body>
+  <h1>PromptToXML — Demo</h1>
+
+  <textarea 
+    id="prompt" 
+    rows="6" 
+    cols="80" 
+    placeholder="Type a user prompt..."></textarea>
+  
+  <br />
+  <button id="send">Convert to XML</button>
+
+  <h3>Result</h3>
+  <pre id="result"></pre>
+
+  <script src="app.js"></script>
+</body>
+</html>
