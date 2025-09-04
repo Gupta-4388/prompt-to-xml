@@ -1,8 +1,8 @@
 from prompt_to_xml.converter import convert_to_xml
 
 def handler(request):
-    try:
-        if request.method == "POST":
+    if request.method == "POST":
+        try:
             data = request.json()
             prompt = data.get("prompt", "")
             xml_output = convert_to_xml(prompt)
@@ -11,13 +11,13 @@ def handler(request):
                 "headers": {"Content-Type": "application/json"},
                 "body": {"xml": xml_output},
             }
-        else:
+        except Exception as e:
             return {
-                "statusCode": 405,
-                "body": {"error": "Method not allowed"},
+                "statusCode": 500,
+                "body": {"error": str(e)},
             }
-    except Exception as e:
+    else:
         return {
-            "statusCode": 500,
-            "body": {"error": str(e)},
+            "statusCode": 405,
+            "body": {"error": "Method not allowed"},
         }
